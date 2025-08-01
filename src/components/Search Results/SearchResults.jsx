@@ -1,6 +1,19 @@
 import styles from "./SearchResults.module.css";
+import { useState } from "react";
 
 function SearchResults(props) {
+
+    const [audio] = useState(() => new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play();
+        }
+        setIsPlaying(!isPlaying);
+    }
 
 
     return (
@@ -10,18 +23,19 @@ function SearchResults(props) {
             </div>
             <div className={styles.contentContainer}>
 
-                {props.results.map((num, i) => (
+                {props.results.map((result, i) => (
                     <div key={i} className={styles.resultContainer}>
                         <div className={styles.resultContainerSansHr}>
-                            <div className={styles.playContainer}>
-                                <img className={styles.playImg} src="https://cdn-icons-png.flaticon.com/512/0/375.png" />
-                            </div>
-                            <div className={styles.nameAndArtistContainer}>
-                                <p className={styles.songName}>Song Name {`${num}`}</p>
-                                <p className={styles.artistName}>Artist</p>
-                            </div>
                             <div className={styles.albumCoverContainer}>
-                                <img className={styles.albumCover} src="https://upload.wikimedia.org/wikipedia/en/4/45/Billie_Eilish_-_Happier_Than_Ever.png" />
+                                <img className={styles.albumCover} src={result.artworkUrl100} />
+                            </div>
+
+                            <div className={styles.nameAndArtistContainer}>
+                                <p className={styles.songName}>{result.trackName}</p>
+                                <p className={styles.artistName}>{result.artistName}</p>
+                            </div>
+                            <div className={styles.playContainer}>
+                                <img onClick={togglePlay} className={styles.playImg} src="https://cdn-icons-png.flaticon.com/512/0/375.png" />
                             </div>
                             <div className={styles.plusButtonContainer}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/262/262038.png" className={styles.plusImg} />

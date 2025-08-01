@@ -42,6 +42,8 @@
 
 .plusButtonContainer {
     margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .resultContainerSansHr {
@@ -52,6 +54,7 @@
 .nameAndArtistContainer {
     display: flex;
     flex-direction: column;
+    width: 70%;
 }
 
 .songName {
@@ -64,7 +67,19 @@
     font-size: 1.7rem;
 }
 
+.albumCoverContainer {
+    padding: 0 1rem 0 0;
+    /* display: flex;
+    align-items: center; */
+}
+
 .divider {
     border: none;
     border-bottom: solid 1px;
+}
+
+.playContainer {
+    display: flex;
+    align-items: center;
+
 }

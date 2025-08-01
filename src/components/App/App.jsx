@@ -6,11 +6,18 @@ import Playlist from "../Playlist/Playlist"
 
 function App() {
 
-  const [results, setResults] = useState([1, 2, 3, 4, 5]);
+  const [results, setResults] = useState([]);
 
-  const handlerFun = (e) => {
-    e.preventDefault()
-    setResults((prev) => [...prev, prev[prev.length - 1] + 1])
+  // const handleSearch = (searchTerm) => {
+  //   fetch(`https://itunes.apple.com/search?term=${searchTerm}&media=music&entity=song&attribute=songTerm&limit=10`)
+  //     .then((response) => response.json())
+  //     .then((response) => setResults(response.results))
+  // }
+
+  const handleSearch = async (searchTerm) => {
+    const data = await fetch(`https://itunes.apple.com/search?term=${searchTerm}&media=music&entity=song&attribute=songTerm&limit=25`);
+    const jsonResponse = await data.json();
+    setResults(jsonResponse.results);
   }
 
   return (
@@ -20,7 +27,7 @@ function App() {
       </header>
 
       <br />
-      <SearchBar handlerFun={handlerFun} />
+      <SearchBar onSearch={handleSearch} />
       <br />
 
       <div className={styles.resultAndPlaylistContainer}>
