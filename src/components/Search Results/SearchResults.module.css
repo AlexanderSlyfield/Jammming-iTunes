@@ -1,0 +1,70 @@
+.searchResultsContainer {
+    width: 55%;
+    height: 40rem;
+    background-color: #021156b5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-left: solid 4px black;
+    border-right: solid 4px black;
+    padding: 1rem;
+}
+
+.headerContainer {
+    padding-bottom: 1rem;
+}
+
+.header {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.contentContainer {
+    overflow-y: auto;
+}
+
+.playImg {
+    width: 4rem;
+    height: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.plusImg {
+    width: 4rem;
+    height: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.albumCover {
+    width: 4rem;
+    height: 4rem;
+}
+
+.plusButtonContainer {
+    margin-left: auto;
+}
+
+.resultContainerSansHr {
+    display: flex;
+    overflow: hidden;
+}
+
+.nameAndArtistContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.songName {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.artistName {
+    color: #6c41ec;
+    font-size: 1.7rem;
+}
+
+.divider {
+    border: none;
+    border-bottom: solid 1px;
+}

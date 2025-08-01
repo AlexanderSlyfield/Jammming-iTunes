@@ -1,0 +1,78 @@
+.playlistResultsContainer {
+    width: 45%;
+    height: 40rem;
+    background-color: #021156b5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-left: solid 4px black;
+    border-right: solid 4px black;
+    padding: 1rem;
+    margin-left: 5rem;
+}
+
+.headerContainer {
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.input {
+    color: #fff;
+    font-size: 3rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #999999;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input::placeholder {
+    color: #fff;
+}
+
+.contentContainer {
+    overflow-y: auto;
+}
+
+.playlistContainerSansHr {
+    display: flex;
+    overflow: hidden;
+}
+
+.nameAndArtistContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.songName {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.artistName {
+    color: #6c41ec;
+    font-size: 1.7rem;
+}
+
+.albumCover {
+    width: 4rem;
+    height: 4rem;
+}
+
+.minusButtonContainer {
+    margin-left: auto;
+}
+
+.minusImg {
+    width: 4rem;
+    height: 4rem;
+    filter: brightness(0) invert(1);
+}
+
+.divider {
+    border: none;
+    border-bottom: solid 1px;
+}

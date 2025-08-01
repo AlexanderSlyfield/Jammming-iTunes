@@ -13,3 +13,8 @@
 .highlight {
   color: #6c41ec;
 }
+
+.resultAndPlaylistContainer {
+  margin: 3rem 7rem 0 7rem;
+  display: flex;
+}
