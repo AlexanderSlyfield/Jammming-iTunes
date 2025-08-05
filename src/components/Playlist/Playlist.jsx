@@ -9,6 +9,14 @@ function Playlist(props) {
         props.setPlaylist(updated);
     }
 
+    const handleSavePlaylist = () => {
+        if (props.playlist.length) {
+            alert("Your playlist would normally be saved to your iTunes or Spotify account, however due to recent changes to the authentication flow of these API's, OAuth2.0 is now the standard and implicit grant flow is being deprecated. This project was ment to use implicit grant flow and therefore will not actually save your playlist.")
+        } else {
+            alert("No songs added to playlist. Please add at least one song.")
+        }
+    }
+
     return (
         <div className={styles.playlistResultsContainer}>
             <div className={styles.headerContainer}>
@@ -34,6 +42,9 @@ function Playlist(props) {
                         <hr className={styles.divider} />
                     </div>
                 ))}
+            </div>
+            <div className={styles.saveButtonContainer}>
+                <button className={styles.saveButton} onClick={handleSavePlaylist} >Save Playlist</button>
             </div>
         </div>
     )

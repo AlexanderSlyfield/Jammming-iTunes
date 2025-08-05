@@ -100,6 +100,32 @@
     color: grey;
 }
 
+.saveButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.saveButton {
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    /* background-color: #021156; */
+    background-color: #6c41ec;
+    border: none;
+    color: #d1d1d1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    will-change: transform;
+}
+
+.saveButton:hover {
+    /* background-color: #051c83; */
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
 @media only screen and (min-width: 1600px) {
     .input {
         font-size: 4rem;

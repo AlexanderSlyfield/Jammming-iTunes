@@ -25,6 +25,7 @@ A React-based music playlist builder that uses the iTunes Search API. Search for
 
 ## 📁 File Structure
 
+```
 ├── src
 │   ├── assets
 │   ├── components
@@ -43,6 +44,7 @@ A React-based music playlist builder that uses the iTunes Search API. Search for
 │   ├── index.css
 │   └── main.jsx
 └── vite.config.js
+```
 
 ## 🚀 Future Features
 
@@ -51,14 +53,12 @@ A React-based music playlist builder that uses the iTunes Search API. Search for
 - Local playlist saving via `localStorage`  
 - Track previewing directly from saved playlists  
 
----
 
 ## 💡 Why I Built This
 
 I built this project to practice working with APIs, React state management, and dynamic UI rendering.  
 I also wanted to create something fun and interactive that mimics real-world music apps.
 
----
 
 ## 📚 Learnings
 
@@ -68,7 +68,6 @@ I also wanted to create something fun and interactive that mimics real-world mus
 - Gained confidence using `useRef` for audio playback control  
 - Experimented with third-party icon libraries and modular CSS
 
----
 
 ## 🙏 Acknowledgements
 
