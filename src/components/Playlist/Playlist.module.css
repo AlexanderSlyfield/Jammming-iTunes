@@ -62,14 +62,32 @@
     height: 4rem;
 }
 
-.minusButtonContainer {
-    margin-left: auto;
+.albumCoverContainer {
+    padding-right: 1rem;
 }
 
-.minusImg {
-    width: 4rem;
-    height: 4rem;
-    filter: brightness(0) invert(1);
+.minusButtonContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.minusIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.minusIcon:hover {
+    transform: scale(1.1);
+    color: #916dff;
+}
+
+.minusIcon:active {
+    transform: scale(1);
 }
 
 .divider {

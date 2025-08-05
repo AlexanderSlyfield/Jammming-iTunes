@@ -7,6 +7,7 @@ import Playlist from "../Playlist/Playlist"
 function App() {
 
   const [results, setResults] = useState([]);
+  const [playlist, setPlaylist] = useState([]);
 
   // const handleSearch = (searchTerm) => {
   //   fetch(`https://itunes.apple.com/search?term=${searchTerm}&media=music&entity=song&attribute=songTerm&limit=10`)
@@ -31,8 +32,8 @@ function App() {
       <br />
 
       <div className={styles.resultAndPlaylistContainer}>
-        <SearchResults results={results} />
-        <Playlist />
+        <SearchResults results={results} playlist={playlist} setPlaylist={setPlaylist} />
+        <Playlist playlist={playlist} setPlaylist={setPlaylist} />
       </div>
     </>
   )

@@ -1,19 +1,43 @@
 import styles from "./SearchResults.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { BsPlayCircle, BsPauseCircle, BsPlusCircle } from "react-icons/bs";
 
 function SearchResults(props) {
 
-    const [audio] = useState(() => new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"));
-    const [isPlaying, setIsPlaying] = useState(false);
+    const urlRef = useRef(null);
+    const [playingIndex, setPlayingIndex] = useState(null);
 
-    const togglePlay = () => {
-        if (isPlaying) {
-            audio.pause();
-        } else {
-            audio.play();
+    const playPreview = (url, index) => {
+
+        if (urlRef.current && urlRef.current.src === url) {
+            if (urlRef.current.paused) {
+                urlRef.current.play();
+                setPlayingIndex(index);
+            } else {
+                urlRef.current.pause();
+                setPlayingIndex(null);
+            }
+            return;
         }
-        setIsPlaying(!isPlaying);
+
+        if (urlRef.current) {
+            urlRef.current.pause()
+        }
+
+        const audioObj = new Audio(url);
+        urlRef.current = audioObj;
+        audioObj.play();
+        setPlayingIndex(index)
+
     }
+
+    const handleAddToPlaylist = (track) => {
+        if (props.playlist.some((trackObj) => trackObj.trackId === track.trackId)) {
+            return null;
+        } else {
+            props.setPlaylist((prev) => [...prev, track])
+        }
+    };
 
 
     return (
@@ -34,11 +58,17 @@ function SearchResults(props) {
                                 <p className={styles.songName}>{result.trackName}</p>
                                 <p className={styles.artistName}>{result.artistName}</p>
                             </div>
-                            <div className={styles.playContainer}>
-                                <img onClick={togglePlay} className={styles.playImg} src="https://cdn-icons-png.flaticon.com/512/0/375.png" />
-                            </div>
+                            {result.previewUrl ? (
+                                <div className={styles.playContainer}>
+                                    {playingIndex === i ? (
+                                        <BsPauseCircle onClick={() => playPreview(result.previewUrl, i)} className={styles.pauseIcon} />
+                                    ) : (
+                                        <BsPlayCircle onClick={() => playPreview(result.previewUrl, i)} className={styles.playIcon} />
+                                    )}
+                                </div>
+                            ) : null}
                             <div className={styles.plusButtonContainer}>
-                                <img src="https://cdn-icons-png.flaticon.com/512/262/262038.png" className={styles.plusImg} />
+                                <BsPlusCircle className={styles.plusIcon} onClick={() => handleAddToPlaylist(result)} />
                             </div>
                         </div>
                         <hr className={styles.divider} />

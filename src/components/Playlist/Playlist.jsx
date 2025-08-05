@@ -1,9 +1,13 @@
 import styles from "./Playlist.module.css";
+import { HiOutlineMinusCircle } from "react-icons/hi2";
 
 
-function Playlist() {
+function Playlist(props) {
 
-    const playlistResults = [1, 2, 3];
+    const handleRemoveSong = (trackNum) => {
+        const updated = props.playlist.filter((track) => track.trackId !== trackNum)
+        props.setPlaylist(updated);
+    }
 
     return (
         <div className={styles.playlistResultsContainer}>
@@ -12,18 +16,19 @@ function Playlist() {
             </div>
             <div className={styles.contentContainer}>
 
-                {playlistResults.map((num, i) => (
+                {props.playlist.map((result, i) => (
                     <div key={i} className={styles.playlistContainer}>
                         <div className={styles.playlistContainerSansHr}>
-                            <div className={styles.nameAndArtistContainer}>
-                                <p className={styles.songName}>Song Name {`${num}`}</p>
-                                <p className={styles.artistName}>Artist</p>
-                            </div>
                             <div className={styles.albumCoverContainer}>
-                                <img className={styles.albumCover} src="https://upload.wikimedia.org/wikipedia/en/4/45/Billie_Eilish_-_Happier_Than_Ever.png" />
+                                <img className={styles.albumCover} src={result.artworkUrl100} />
                             </div>
+                            <div className={styles.nameAndArtistContainer}>
+                                <p className={styles.songName}>{result.trackName}</p>
+                                <p className={styles.artistName}>{result.artistName}</p>
+                            </div>
+
                             <div className={styles.minusButtonContainer}>
-                                <img src="https://cdn-icons-png.flaticon.com/512/262/262039.png" className={styles.minusImg} />
+                                <HiOutlineMinusCircle onClick={() => handleRemoveSong(result.trackId)} className={styles.minusIcon} />
                             </div>
                         </div>
                         <hr className={styles.divider} />
