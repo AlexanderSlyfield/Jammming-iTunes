@@ -38,3 +38,29 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     color: #fff;
 }
+
+@media only screen and (min-width: 1600px) {
+    .input {
+        font-size: 3rem;
+    }
+
+    .button {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .form {
+        margin: 1rem 0 0 0;
+    }
+
+    .input {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 0 0;
+        padding: 1rem 3rem;
+    }
+}

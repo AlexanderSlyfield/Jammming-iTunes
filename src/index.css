@@ -12,6 +12,7 @@ body {
   background-image: url(https://images.hdqwalls.com/wallpapers/my-best-casette-playlist-5k-za.jpg);
   /* background-position: center; */
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top;
   font-family: 'Poppins', sans-serif;

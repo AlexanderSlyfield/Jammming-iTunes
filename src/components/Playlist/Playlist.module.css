@@ -18,7 +18,7 @@
 
 .input {
     color: #fff;
-    font-size: 3rem;
+    font-size: 3.5rem;
     width: 100%;
     background-color: transparent;
     border: none;
@@ -45,6 +45,8 @@
 .nameAndArtistContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 70%;
 }
 
 .songName {
@@ -58,12 +60,14 @@
 }
 
 .albumCover {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 .albumCoverContainer {
     padding-right: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .minusButtonContainer {
@@ -73,8 +77,7 @@
 }
 
 .minusIcon {
-    width: 3.5rem;
-    height: 3.5rem;
+    font-size: 3.5rem;
     color: #fff;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -93,4 +96,80 @@
 .divider {
     border: none;
     border-bottom: solid 1px;
+    margin: 0.5rem 0;
+    color: grey;
+}
+
+@media only screen and (min-width: 1600px) {
+    .input {
+        font-size: 4rem;
+    }
+
+    .albumCover {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .songName {
+        font-size: 2.8rem;
+    }
+
+    .artistName {
+        font-size: 2.5rem;
+    }
+
+    .minusIcon {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .playlistResultsContainer {
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .playlistResultsContainer {
+        width: 100%;
+        margin: 2rem 0 0 0;
+    }
+
+    .input {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .albumCover {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .songName {
+        font-size: 2rem;
+    }
+
+    .artistName {
+        font-size: 1.7rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .input {
+        font-size: 2.5rem;
+    }
+
+    .albumCover {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .songName {
+        font-size: 1.5rem;
+    }
+
+    .artistName {
+        font-size: 1.3rem;
+    }
 }
