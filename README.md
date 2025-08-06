@@ -13,7 +13,8 @@ A React-based music playlist builder that uses the iTunes Search API. Search for
 
 ## 🎬 Demo
 
-> Coming soon – 
+Check out the live site here:  
+👉 [Jammming iTunes Live Demo](https://alexanderslyfield.github.io/Jammming-iTunes/)
 
 ## 🛠️ Built With
 
